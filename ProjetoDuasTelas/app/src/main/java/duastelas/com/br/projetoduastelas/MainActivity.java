@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonSaudacoes = (Button) findViewById(R.id.buttonSaudacao);
         final Button buttonAbrirTela2 = (Button) findViewById(R.id.buttonAbrirTela2);
         final Button buttonSomar = (Button) findViewById(R.id.buttonSomar);
-        final EditText valor1 = (EditText) findViewById(R.id.editTextValor1);
-        final EditText valor2 = (EditText) findViewById(R.id.editTextValor2);
+        final EditText editTextNum1 = (EditText) findViewById(R.id.editTextNum1);
+        final EditText editTextNum2 = (EditText) findViewById(R.id.editTextNum2);
 
         buttonSaudacoes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,13 +43,15 @@ public class MainActivity extends AppCompatActivity {
                 String nome = editTextNome.getText().toString();
 
                 // Mostrar uma mensagem na tela para o usuário
-                Toast.makeText(MainActivity.this, "Oi " + nome + "! Parabéns pelo seu primeiro app!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Oi " + nome +
+                        "! Parabéns pelo seu primeiro app!", Toast.LENGTH_LONG).show();
             }
         });
 
         buttonAbrirTela2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Abrir a tela 2
                 Intent tela2 = new Intent(MainActivity.this, SegundaActivity.class);
                 startActivity(tela2);
@@ -63,29 +65,28 @@ public class MainActivity extends AppCompatActivity {
                 Intent tela2 = new Intent(MainActivity.this, SegundaActivity.class);
 
                 // Passar valores para segunda Tela
-                tela2.putExtra("valor1", valor1.getText());
-                tela2.putExtra("valor2", valor2.getText());
-                tela2.putExtra("resultado", true);
+                tela2.putExtra("valor1", Integer.parseInt(editTextNum1.getText().toString()));
+                tela2.putExtra("valor2", Integer.parseInt(editTextNum2.getText().toString()));
+                tela2.putExtra("somar", true);
 
                 // Abrir a tela 2
                 startActivity(tela2);
             }
         });
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        Log.d("TESTE", "Passou pelo START Tela 1");
+        Log.d(TAG, "Passou pelo START Tela 1");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        Log.d("TESTE", "Passou pelo RESUME Tela 1");
+        Log.d(TAG, "Passou pelo RESUME Tela 1");
 
         try {
             Thread.sleep(5000);
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-        Log.d("TESTE", "Passou pelo PAUSE Tela 1");
+        Log.d(TAG, "Passou pelo PAUSE Tela 1");
         Toast.makeText(MainActivity.this, "PAUSE Tela 1", Toast.LENGTH_LONG).show();
     }
 
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
 
-        Log.d("TESTE", "Passou pelo STOP Tela 1");
+        Log.d(TAG, "Passou pelo STOP Tela 1");
         Toast.makeText(MainActivity.this, "STOP Tela 1", Toast.LENGTH_LONG).show();
     }
 
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
 
-        Log.d("TESTE", "Passou pelo RESTART Tela 1");
+        Log.d(TAG, "Passou pelo RESTART Tela 1");
         Toast.makeText(MainActivity.this, "RESTART Tela 1", Toast.LENGTH_LONG).show();
     }
 }

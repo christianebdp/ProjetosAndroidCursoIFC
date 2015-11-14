@@ -11,20 +11,22 @@ import android.widget.Toast;
 
 public class SegundaActivity extends AppCompatActivity {
 
+    private static final String TAG = "TESTE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda);
 
-        Log.d("TESTE", "Passou pelo CREATE Tela 2");
+        Log.d(TAG, "Passou pelo CREATE Tela 2");
 
         Intent intent = getIntent();
         int valor1 = intent.getIntExtra("valor1", 0);
         int valor2 = intent.getIntExtra("valor2", 0);
-        boolean resultado = intent.getBooleanExtra("resultado", false);
+        boolean somar = intent.getBooleanExtra("somar", false);
 
-        if (resultado) {
+        if (somar) {
 
             int total = valor1 + valor2;
 
