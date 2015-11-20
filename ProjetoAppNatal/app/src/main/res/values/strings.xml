@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Aplicativo de Natal da Chris</string>
+    <string name="avancar">Clique na imagem para avançar!</string>
+    <string name="button_1">Botão com Imagem</string>
+    <string name="button_2">Avançar</string>
+    <string name="button_3">Botão 3</string>
+    <string name="button_4">Botão 4</string>
+    <string name="button_5">Botão 5</string>
+    <string name="button_6">Botão 6</string>
+    <string name="button_7">Botão 7</string>
+    <string name="button_8">Botão 8</string>
+    <string name="text_view_radio_group">Selecione a linguagem e clique em "Avançar":</string>
+    <string name="radio_button_english">English</string>
+    <string name="radio_button_portugues">Portuguese</string>
+</resources>
