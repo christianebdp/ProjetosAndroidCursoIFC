@@ -16,4 +16,38 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Say HoHoHo!"
+        android:drawableLeft="@drawable/android_christmas_pequeno"
+        android:id="@+id/buttonSayHoHoHo"
+        android:layout_below="@+id/textViewMensagem"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextSay"
+        android:layout_below="@+id/buttonSayHoHoHo"
+        android:layout_alignRight="@+id/buttonSayHoHoHo"
+        android:layout_alignEnd="@+id/buttonSayHoHoHo"
+        android:layout_marginTop="81dp"
+        android:layout_alignLeft="@+id/buttonSayHoHoHo"
+        android:layout_alignStart="@+id/buttonSayHoHoHo"
+        android:text="You say now" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Say"
+        android:id="@+id/buttonSay"
+        android:layout_below="@+id/editTextSay"
+        android:layout_alignRight="@+id/editTextSay"
+        android:layout_alignEnd="@+id/editTextSay"
+        android:layout_alignLeft="@+id/editTextSay"
+        android:layout_alignStart="@+id/editTextSay" />
+
 </RelativeLayout>

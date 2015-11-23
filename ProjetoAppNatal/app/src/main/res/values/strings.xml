@@ -11,5 +11,5 @@
     <string name="button_8">Botão 8</string>
     <string name="text_view_radio_group">Selecione a linguagem e clique em "Avançar":</string>
     <string name="radio_button_english">English</string>
-    <string name="radio_button_portugues">Portuguese</string>
+    <string name="radio_button_portugues">Português</string>
 </resources>

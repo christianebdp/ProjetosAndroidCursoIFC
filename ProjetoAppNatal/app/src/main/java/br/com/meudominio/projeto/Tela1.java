@@ -26,22 +26,32 @@ public class Tela1 extends AppCompatActivity {
 
         // Inicializar o RadioGroup
         radioGroup = (RadioGroup) findViewById(R.id.radioGroupLinguagem);
+
+        // Garantir que todos os radio buttons fiquem desmarcados
         radioGroup.clearCheck();
-    }
 
-    public void avancar(View v) {
+        // Garantir que o radio button "English" inicie selecionado
+        radioGroup.check(R.id.radioButtonPortuguese);
 
-        RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
+        // Botão avançar
+        final Button buttonAvancar = (Button) findViewById(R.id.button2Avancar);
 
-        if (radioButton.getText().toString().equals("English")) {
-            // Abrir a tela em ENGLISH - Tela 2
-            Intent tela2 = new Intent(Tela1.this, Tela2.class);
-            startActivity(tela2);
-        } else {
-            // Abrir a tela em PORTUGUÊS - Tela 3
-            Intent tela3 = new Intent(Tela1.this, Tela3.class);
-            startActivity(tela3);
-        }
+        buttonAvancar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
+
+                if (radioButton.getText().toString().equals("English")) {
+                    // Abrir a tela em ENGLISH - Tela 2
+                    Intent tela2 = new Intent(Tela1.this, Tela2.class);
+                    startActivity(tela2);
+                } else {
+                    // Abrir a tela em PORTUGUÊS - Tela 3
+                    Intent tela3 = new Intent(Tela1.this, Tela3.class);
+                    startActivity(tela3);
+                }
+            }
+        });
     }
 
     @Override

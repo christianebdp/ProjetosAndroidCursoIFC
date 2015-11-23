@@ -23,6 +23,10 @@ public class Tela4 extends AppCompatActivity {
         int valor2 = intent.getIntExtra("valor2", 0);
         boolean somar = intent.getBooleanExtra("somar", false);
 
+        if (savedInstanceState != null) {
+            somar = false;
+        }
+
         if (somar) {
 
             int total = valor1 + valor2;
